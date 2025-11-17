@@ -1,18 +1,18 @@
 import { MinisRouter } from "@shopify/shop-minis-react";
 import { Routes, Route } from "react-router";
-// import Navigation from "./Navigation";
-import ProductPage from "./pages/ProductPage";
-import CartPage from "./pages/CartPage";
+import SizeGuidePage from "./pages/SizeGuidePage";
 import { HomePage } from "./pages/HomePage";
+import TestComponent from "./components/TestComponet";
+import ProductPage from "./pages/ProductPage";
 
 export default function App() {
   return (
     <MinisRouter viewTransitions>
-      {/* <Navigation /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/products" element={<ProductPage />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route path="/size-guide" element={<SizeGuidePage />} />
+        <Route path="/test" element={<TestComponent />} />
+        <Route path="/product" element={<ProductPage />} />
       </Routes>
     </MinisRouter>
   );

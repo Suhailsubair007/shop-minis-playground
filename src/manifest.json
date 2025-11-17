@@ -2,6 +2,7 @@
   "name": "shop-minis-playground",
   "permissions": [],
   "scopes": [
-    "product_list:write"
+    "product_list:write",
+    "product_list:read"
   ]
 }
