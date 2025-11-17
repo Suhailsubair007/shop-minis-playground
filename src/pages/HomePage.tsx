@@ -21,6 +21,11 @@ export function HomePage() {
       title: "Product Page",
       description: "Product Listing page with size guide component.",
       path: "/product",
+    },
+    {
+      title: "Product Search",
+      description: "Product Search page .",
+      path: "/product-search",
     }
   ];
 

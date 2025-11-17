@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router";
 import SizeGuidePage from "./pages/SizeGuidePage";
 import { HomePage } from "./pages/HomePage";
 import TestComponent from "./components/TestComponet";
-import ProductPage from "./pages/ProductPage";
+import SearchProducts from "./components/SearchProducts";
+import { ProductPage } from "./pages/ProductPage";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/size-guide" element={<SizeGuidePage />} />
         <Route path="/test" element={<TestComponent />} />
         <Route path="/product" element={<ProductPage />} />
+        <Route path="/product-search" element={<SearchProducts />} />
       </Routes>
     </MinisRouter>
   );

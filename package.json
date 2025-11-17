@@ -10,16 +10,19 @@
     "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
+    "@shopify/shop-minis-cli": "0.0.207",
     "@tailwindcss/vite": "^4.1.8",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "tailwindcss": "^4.1.8",
-    "typescript": "^5.8.3",
-    "@shopify/shop-minis-cli": "0.0.207"
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@shopify/shop-minis-react": "0.3.1",
+    "embla-carousel-auto-scroll": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
