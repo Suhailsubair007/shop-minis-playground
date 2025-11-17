@@ -1,48 +1,36 @@
 import {
-  useRecentProducts,
-  useRecommendedProducts,
+  Touchable,
+  useNavigateWithTransition,
+  Search,
 } from "@shopify/shop-minis-react";
 
-export default function RecommendationCarousel({ productId }) {
-  // Fetch recent products
-  const { recentProducts, loading: loadingRecent } = useRecentProducts({
-    // optionally pass product ID to exclude current
-
-    excludeIds: [productId],
-    limit: 5,
-  });
-
- const {products, loading, error} = useRecommendedProducts()
-
-  console.log({products, loading, error})
-  if (loadingRecent || loadingRecommended) {
-    return <div>Loading recommendations…</div>;
-  }
-
-  const items = recommendedProducts?.length
-    ? recommendedProducts
-    : recentProducts;
-
-  if (!items || items.length === 0) {
-    return null; 
-  }
+const SearchProducts = () => {
+  const navigate = useNavigateWithTransition();
 
   return (
-    <div className="mt-6">
-      <h3 className="text-lg font-semibold mb-2">You might like</h3>
-      <div className="flex overflow-x-auto gap-4">
-        {items.map((prod) => (
-          <div key={prod.id} className="min-w-[140px]">
-            <img
-              src={prod.thumbnailUrl}
-              alt={prod.title}
-              className="w-full h-auto rounded-md"
-            />
-            <div className="mt-1 text-sm font-medium">{prod.title}</div>
-            <div className="text-xs text-gray-600">${prod.price}</div>
+    <div className="min-h-screen bg-white flex flex-col">
+      <div className="flex-1 px-4 mt-3 overflow-hidden">
+        <div className="sticky top-0 z-10 bg-white border-b border-gray-200">
+          <div className="flex items-center px-4 py-3">
+            <Touchable
+              onClick={() => navigate(-1)}
+              className="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors"
+              style={{ minHeight: "48px", minWidth: "48px" }}
+            >
+              <span className="text-2xl font-light text-gray-700">←</span>
+            </Touchable>
           </div>
-        ))}
+        </div>
+        <div className="h-full">
+          <Search
+            placeholder="Search products"
+            initialQuery=""
+            className="w-full h-full"
+          />
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default SearchProducts;
