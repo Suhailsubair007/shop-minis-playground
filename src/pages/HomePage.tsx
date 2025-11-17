@@ -10,9 +10,18 @@ export function HomePage() {
     {
       title: "Size Guide Component",
       description: "Test the Size Guide modal component in a product page.",
-      path: "/products",
-      emoji: "📐",
-    },    
+      path: "/size-guide",
+    },
+    {
+      title: "Test Components",
+      description: "Test the responce from the shopify minis sdk.",
+      path: "/test",
+    },
+    {
+      title: "Product Page",
+      description: "Product Listing page with size guide component.",
+      path: "/product",
+    }
   ];
 
   return (
@@ -33,9 +42,6 @@ export function HomePage() {
             style={{ minHeight: "48px" }} // Ensure touch target compliance
           >
             <div className="flex items-start gap-4">
-              <span className="text-3xl" role="img" aria-label={item.title}>
-                {item.emoji}
-              </span>
               <div className="flex-1">
                 <h2 className="text-lg font-semibold text-gray-900 mb-1">
                   {item.title}
@@ -46,13 +52,6 @@ export function HomePage() {
             </div>
           </Touchable>
         ))}
-      </div>
-
-      {/* Footer */}
-      <div className="bg-white border-t border-gray-200 px-4 py-4">
-        <p className="text-xs text-gray-500 text-center">
-          Testing all {">"}50 supported libraries and SDK features
-        </p>
       </div>
     </div>
   );
